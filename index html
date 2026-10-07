@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>বন্ধুর IQ Test 😂</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            text-align: center;
+        }
+
+        .box {
+            width: 90%;
+            max-width: 500px;
+            padding: 35px 25px;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 25px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            font-size: 34px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            margin: 12px 0;
+            padding: 14px;
+            border: none;
+            border-radius: 30px;
+            font-size: 17px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.04);
+        }
+
+        .result {
+            display: none;
+            margin-top: 25px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .emoji {
+            font-size: 60px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+    <div class="emoji">🧠😂</div>
+
+    <h1>বন্ধুর IQ Test</h1>
+
+    <p>
+        তোমার আসল বুদ্ধির পরীক্ষা শুরু হতে যাচ্ছে! 😎
+    </p>
+
+    <p id="question">
+        তুমি কি নিজেকে বুদ্ধিমান মনে করো?
+    </p>
+
+    <button onclick="nextQuestion()">হ্যাঁ 😎</button>
+    <button onclick="nextQuestion()">অবশ্যই! 🔥</button>
+
+    <div class="result" id="result">
+        😂😂😂<br><br>
+        অভিনন্দন!<br>
+        তোমার IQ এত বেশি যে<br>
+        <span style="font-size:32px;">Calculator-ও ভয় পায়! 🤣</span>
+        <br><br>
+        <small>এইটা শুধু ফাজলামো ছিল বন্ধু! ❤️</small>
+    </div>
+
+</div>
+
+<script>
+
+let count = 0;
+
+function nextQuestion() {
+
+    count++;
+
+    if (count == 1) {
+        document.getElementById("question").innerHTML =
+        "প্রশ্ন ২: ২ + ২ কত? 🤔";
+
+    } 
+    else if (count == 2) {
+        document.getElementById("question").innerHTML =
+        "প্রশ্ন ৩: তুমি কি এখনো মনে করো এটা সত্যিকারের IQ Test? 😂";
+
+    } 
+    else {
+        document.getElementById("question").style.display = "none";
+
+        document.querySelectorAll("button").forEach(btn => {
+            btn.style.display = "none";
+        });
+
+        document.getElementById("result").style.display = "block";
+    }
+}
+
+</script>
+
+</body>
+</html>
